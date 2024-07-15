@@ -1,0 +1,61 @@
+﻿@model web.Models.RegisterViewModel
+@{
+    ViewBag.Title = @web.Resources.lang.KayitOl;
+}
+
+<div id="LoginForm">
+    <section id="loginForm">
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+        <div class="main-div">
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+            <div class="panel">
+                <h2 style="font-size:30px ; font-weight:bold; color:  firebrick">@web.Resources.lang.KayitOl</h2>
+            </div>
+
+            <form id="Login">
+                <div class="form-group">
+                    <div style="font-family:'Segoe Print'">
+                        @web.Resources.lang.KullaniciAdi
+                    </div>
+                    <div id="inputEmail">
+                        @Html.TextBoxFor(m => m.KullaniciAdi, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div style="font-family:'Segoe Print'">
+                        @web.Resources.lang.Eposta
+                    </div>
+
+                    <div id="inputPassword">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div style="font-family:'Segoe Print'">
+                        @web.Resources.lang.Sifre
+                    </div>
+                    <div id="inputPassword">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div style="font-family:'Segoe Print'">
+                        @web.Resources.lang.SifreOnay
+                    </div>
+                    <div id="inputPassword">
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                    </div>
+                </div>
+                <button type="submit" value="@web.Resources.lang.KayitOl" class="btn btn-primary">@web.Resources.lang.KayitOl</button>
+            </form>
+        </div>
+                }
+        </section>
+</div>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

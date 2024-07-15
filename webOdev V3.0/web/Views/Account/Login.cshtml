@@ -1,0 +1,79 @@
+﻿@using web.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = web.Resources.lang.OturumAc;
+}
+
+<div id="LoginForm">
+   
+    <section id="loginForm">
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login-form", role = "form" }))
+        {
+        <div class="main-div">
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="panel">
+                <h2>@web.Resources.lang.OturumAc</h2>                
+            </div>
+            <form id="Login">
+                <div class="form-group">
+                    <div style="font-family:'Segoe Print'"> @web.Resources.lang.KullaniciAdi</div>
+                   
+
+                    <div id="inputEmail">
+                        @Html.TextBoxFor(m => m.KullaniciAdi, new { @class = "form2" })
+                        <div>
+                            @Html.ValidationMessageFor(m => m.KullaniciAdi, "", new { @class = "text-danger" })
+                        </div>
+                        </div>
+                    </div>
+
+                <div class="form-group">
+                  
+                    <div style="font-family:'Segoe Print'">
+                        @web.Resources.lang.Eposta
+                    </div>
+                   
+                    <div id="inputPassword">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form2" })
+                        <div>
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div style="font-family:'Segoe Print'">
+                        @web.Resources.lang.Sifre
+                    </div>
+                        <div id="inputPassword">
+                            @Html.PasswordFor(m => m.Password, new { @class = "form2" })
+                            <div>
+                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <div class="checkbox">
+                                @Html.CheckBoxFor(m => m.RememberMe)
+                                @Html.LabelFor(m => m.RememberMe)
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" value="@web.Resources.lang.OturumAc" class="btn btn-primary">@web.Resources.lang.OturumAc</button>
+</form>
+        </div>
+                }
+        </section>
+    </div>
+   
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Anasayfa</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    <link href="~/Content/Layout.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/footer.css">
+    <link href="~/Content/form.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="@Url.Action("Index", "Home")">
+
+                    <img src="~/resim/logo.png" style="width: 125px">
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li style="font-family:'MV Boli'">@Html.ActionLink(web.Resources.lang.Anasayfa, "Index", "Home")</li>
+                    <li style="font-family:'MV Boli'" >@Html.ActionLink(web.Resources.lang.Hakkimizda, "About", "Home")</li>
+                    <li style="font-family:'MV Boli'">@Html.ActionLink(web.Resources.lang.Moduller, "Modules", "Home")</li>
+                    <li style="font-family:'MV Boli'">@Html.ActionLink(web.Resources.lang.Blog, "Blog", "Home")</li>
+                    <li style="font-family:'MV Boli'">@Html.ActionLink(web.Resources.lang.Iletisim, "Contact", "Home")</li>
+                    <li style="font-family:'MV Boli'">@Html.ActionLink(web.Resources.lang.Admin, "Index", "Admin")</li>
+                </ul>
+                <div class="nav navbar-nav navbar-right ">
+                    <div class="col-md-3">                     
+                        <ul class="nav navbar-nav">
+                            <li>
+                                @if (HttpContext.Current.Session["Culture"].ToString() == "tr")
+                                {
+
+                                    @Html.ActionLink("TR", "ChangeCulture", "Home", new { lang = "en", returnurl = this.Request.RawUrl }, null)
+
+                                }
+                                else
+                                {
+
+                                    @Html.ActionLink("EN", "ChangeCulture", "Home", new { lang = "tr", returnurl = this.Request.RawUrl }, null)
+
+                                }
+                            </li>
+                            </ul>
+                       
+                    </div>
+                    
+                </div>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+
+    @RenderBody()
+    <hr />
+    <footer id="altkisim">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h5>@web.Resources.lang.makale</h5>
+                    <ul>
+                        <li><a href="https://www.bodyforumtr.com/threads/v%C3%BCcut-gelistirme-%C3%9Czerine-temel-bilgilerin-derlemesi.9/">BodyBuilding</a></li>
+                        <li><a href="https://www.tavsiyeediyorum.com/makale_3180.htm">Pilates</a></li>
+                        <li><a href="https://www.tavsiyeediyorum.com/makale_14319.htm">@web.Resources.lang.saglikliYasam</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>@web.Resources.lang.DigerSubeler</h5>
+                    <ul>
+                        <li><a href="http://www.marsathletic.com/kulupler/mac-emaar/">Emaar Square Mall BES</a></li>
+                        <li><a href="http://www.marsathletic.com/">BES İstanbul-Kadıköy</a></li>
+                        <li><a href="http://www.marsathletic.com/kulupler/mac-bebekoy/">BES İstanbul-Bebek</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>@web.Resources.lang.Yorumlar</h5>
+                    <ul>
+                        <li><a href="@Url.Action("Contact", "Home")">@web.Resources.lang.BizeYorumYapin</a></li>
+
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5 class="iletisim"><a href="@Url.Action("Contact", "Home")">@web.Resources.lang.Iletisim</a></h5>
+
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.3916826993373!2d30.378473515138765!3d40.77540244167164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ccb2bd1b7dd0ff%3A0x37da4f7cff1727cd!2sMACFit+Agora!5e0!3m2!1str!2str!4v1540674826167" height="300" width="1200" style="margin-top:40px"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="social-networks">
+            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+            <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+        </div>
+        <div class="footer-copyright">
+            <p>@web.Resources.lang.BESyazilim</p>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,89 @@
+﻿
+<div class="row">
+    <div class="col-md-6" style="margin-top:40px;">
+        <div class="panel panel-default">
+            <div class="panel-heading" style="background-color: cornflowerblue">
+                <h4 style="font-family:'Segoe Print';color:white" > @web.Resources.lang.Harita</h4>
+            </div>
+            <div class="panel-body" style="background-color:  whitesmoke">
+                <div class="contact-map">
+                    <div class="google-map-canvas" id="map-canvas" style="height: 500px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default" style="margin-top:40px">
+            <div class="panel-heading" style="background-color: cornflowerblue">
+                <h4 style="font-family:'Segoe Print';color:white"" >@web.Resources.lang.Iletisim</h4>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <address style="font-family:'Arial Rounded MT'">
+                        Ünalan Mahallesi, Libadiye Caddesi No: <br />
+                        82-F Üsküdar, 34700, İstanbul / TÜRKİYE<br />
+                        Tel: +90 (264) 295 54 54<br/>
+                        E-mail: BesFit@gmail.com
+                    </address>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading"  style="background-color: cornflowerblue">
+                <h4 style="font-family:'Segoe Print';color:white" ">@web.Resources.lang.IletisimFormu</h4>
+            </div>
+            <div class="panel-body">
+                <div col-md-12>
+                    <div class="contact-form">
+                        @using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        {
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">@web.Resources.lang.AdSoyad *</label>
+                                <input id="adsoyad" type="text" name="name" class="form-control" placeholder="@web.Resources.lang.AdSoyad *">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">@web.Resources.lang.Eposta *</label>
+                                <input id="eposta" type="text" name="name" class="form-control" placeholder="@web.Resources.lang.Eposta *">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">@web.Resources.lang.Mesaj *</label>
+                                @Html.TextArea("Mesaj", null, new { @class = "form-control", placeholder = "Mesajınız", rows = 6, columns = 40 })
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="col-sm-offset-4 btn btn-primary">@web.Resources.lang.Gonder</button>
+                                <label>@TempData["Mesaj"]</label>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function initialize() {
+
+        var myLatlng = new google.maps.LatLng(40.741223, 30.332890);
+        var mapOptions = {
+            zoom: 15,
+            center: myLatlng
+        }
+        var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            animation: google.maps.Animation.DROP
+        });
+    }
+
+    function loadScript() {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' +'callback=initialize';
+        document.body.appendChild(script);
+    }
+
+    window.onload = loadScript;
+</script>

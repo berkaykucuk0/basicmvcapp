@@ -1,0 +1,111 @@
+#altkisim {
+    background-color: black;
+    color: white;
+    padding-top: 20px;
+}
+
+#map-container {
+    height: 240px;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+#altkisim .row {
+    margin: 0 85px;
+}
+
+#altkisim .footer-copyright {
+    background-color: brown;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+}
+
+#altkisim .footer-copyright p {
+        margin: 10px;
+        color: #ccc;
+    }
+
+#altkisim .container {
+    width: auto;
+}
+
+#altkisim ul {
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 1.7;
+}
+
+#altkisim h5 {
+    font-size: 18px;
+    color: darkred;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#altkisim a {
+    color: #d2d1d1;
+    text-decoration: none;
+}
+
+    #altkisim a:hover,
+    #altkisim a:focus {
+        text-decoration: none;
+        color: white;
+    }
+
+#altkisim .social-networks {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 38px;
+}
+
+#altkisim .fa {
+    font-size: 30px;
+    margin-right: 15px;
+    margin-left: 20px;
+    background-color: white;
+    color: #182c39;
+    border-radius: 51%;
+    padding: 10px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 31px;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+#altkisim .fa-facebook:hover {
+    color: #2b55ff;
+}
+
+#altkisim .fa-facebook:focus {
+    color: #2b55ff;
+}
+
+#altkisim .fa-google-plus:hover {
+    color: red;
+}
+
+#altkisim .fa-google-plus:focus {
+    color: red;
+}
+
+#altkisim .fa-twitter:hover {
+    color: #00aced;
+}
+
+#altkisim .fa-twitter:focus {
+    color: #00aced;
+}
+
+.content{
+   flex: 1 0 auto;
+   -webkit-flex: 1 0 auto;
+   min-height: 200px;
+}
+#altkisim .yorumlar:focus {
+    color: aqua;
+}

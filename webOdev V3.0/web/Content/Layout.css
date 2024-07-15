@@ -1,0 +1,29 @@
+﻿
+#menuyazilari {
+    font-family: Arial;
+    font-size: medium;
+    color: crimson;
+    margin-right: 20px;
+}
+#menuyazilari:hover 
+{
+    color: white;
+       
+}
+img {
+    padding: 0;
+    max-width: 100%;
+}
+
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css");
+
+
+body {
+    padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+    body {
+        padding-top: 56px;
+    }
+}

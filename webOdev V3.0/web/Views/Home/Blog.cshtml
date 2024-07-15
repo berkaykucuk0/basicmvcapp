@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "Blog";
+}
+
+@model  List<web.Models.Data.Blog>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-8">
+            <div class="panel panel-default" style="margin-top:30px">
+                @foreach (var item in Model.Take(1))
+                {
+                    <div class="panel-heading" style="background-color:crimson; color:white">
+                        <h4 style="font-weight:bold ;">@item.BlogBaslik</h4>
+                    </div>
+                    <div class="panel-body" style="background-color: ivory">
+                       
+                        <p>@String.Format("{0:dd/MM/yyyy}", item.BlogTarih)</p>
+                        @if (item.BlogFoto == null)
+                        {
+                            <img class="img-responsive" src="~/resim/slider1.jpg" alt="@item.BlogBaslik" />
+                        }
+                        else
+                        {
+                            <img class="img-responsive" src="data:image/png;base64,@System.Convert.ToBase64String(item.BlogFoto)" alt="@item.BlogBaslik">
+                        }
+                        <p style="font-weight:bold;font-size:15px; margin-top:15px">@item.BlogIcerik</p>
+                        <hr />                      
+                    </div>
+                }
+
+            </div>
+        </div>
+        <div class="col-md-4">
+           
+            <div class="col-md-12">
+                <div class="panel panel-default" style="margin-top:30px">
+                    <div class="panel-heading" style="font-weight:bold;font-size:30px; background-color: coral"><p style="font-family:'Segoe Print';margin-left:65px">@web.Resources.lang.enPopulerBlog</p></div>
+                    <div class="panel-body">
+                        @foreach (var item in Model.Take(5))
+                        {
+                            <div class="blog-list-post clearfix">
+                                <div class="blog-list-thumb">
+                                    @if (item.BlogFoto == null)
+                                    {
+                                        <img class="img-responsive" src="~/resim/slider1.jpg" alt="@item.BlogBaslik" />
+                                    }
+                                    else
+                                    {
+                                        <img class="img-responsive" src="data:image/png;base64,@System.Convert.ToBase64String(item.BlogFoto)" alt="@item.BlogBaslik">
+                                    }
+                                </div>
+                                <div class="blog-list-details">
+                                    <h5><a>@item.BlogBaslik</a></h5>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

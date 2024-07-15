@@ -1,0 +1,264 @@
+﻿@{
+    ViewBag.Title = "Ana Sayfa";
+}
+
+@model web.Controllers.AnaSayfaDTO
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-bottom: 50px">
+                    <div class="carousel-inner" role="listbox">
+                      
+                        @foreach (var item in Model.slider)
+                        {
+                            <div id="slider" class="item" data-id="@item.ID">
+                                @if (item.SliderFoto == null)
+                                {
+                                    <img src="~/resim/slider1.jpg" alt="@item.SliderText" />
+
+                                }
+                                else
+                                {
+                                    <img style="height:292px;width:%100" src="data:image/png;base64,@System.Convert.ToBase64String(item.SliderFoto)" alt="@item.SliderText">
+                                }
+                                <div class="carousel-caption">
+                                    <h3>@item.SliderText</h3>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<section class="best-receipe-area" style="margin-bottom: 50px ; margin-top:50px">
+    <div class="container">
+        
+        <div class="row">
+
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="single-best-receipe-area mb-30">
+                    <img src="~/resim/fitness.jpg" alt="">
+                    <div class="receipe-content">                   
+                            <h5>Fitness</h5>            
+                        <div class="ratings">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="single-best-receipe-area mb-30">
+                    <img src="~/resim/cardio.jpg" alt="">
+                    <div class="receipe-content">                        
+                            <h5>Cardio</h5>
+                        <div class="ratings">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="single-best-receipe-area mb-30">
+                    <img src="~/resim/pilates.jpg" alt="">
+                    <div class="receipe-content">                    
+                            <h5>Pilates</h5>                      
+                        <div class="ratings">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="single-best-receipe-area mb-30">
+                    <img src="~/resim/bodybuilding.jpg" alt="">
+                    <div class="receipe-content">                       
+                            <h5>Bodybuilding</h5>
+                        <div class="ratings">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="single-best-receipe-area mb-30">
+                    <img src="~/resim/bosu1.jpg" alt="">
+                    <div class="receipe-content">                      
+                            <h5>Bosu</h5>
+                        <div class="ratings">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="single-best-receipe-area mb-30">
+                    <img src="~/resim/zumba.jpg" alt="">
+                    <div class="receipe-content">                  
+                            <h5>Zumba</h5>
+                        <div class="ratings">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="breadcumb-area bg-img bg-overlay" style="background-image: url(../../resim/slider3.jpg); height:300px; margin-bottom:60px">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcumb-text text-center">
+                    <h1 style=" color:chartreuse; margin-top:100px;margin-right:100px; font-size: 100px;  text-shadow: 10px 8px 5px #000;">BES FİT</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading"style="background-color:lightcoral ; color:white">@web.Resources.lang.Duyurular</div>
+            <div class="panel-body" style="background-color:lightgoldenrodyellow">
+
+               
+                @foreach (var item in Model.duyuru)
+                {
+                    <div class="blog-list-post clearfix">
+                        <div class="blog-list-thumb">
+                            @if (item.DuyuruFoto == null)
+                            {
+                                <a><img class="img-responsive" src="~/resim/slider1.jpg" alt="@item.DuyuruBaslik" /></a>
+                            }
+                            else
+                            {
+                                <a><img class="img-responsive" src="data:image/png;base64,@System.Convert.ToBase64String(item.DuyuruFoto)" alt="@item.DuyuruBaslik"></a>
+                            }
+                        </div>
+                        <div class="blog-list-details">
+                            <h5 class="blog-list-title">@item.DuyuruIcerik</h5>
+                            <p class="blog-list-meta small-text"><span><a>@String.Format("{0:dd/MM/yyyy}", item.DuyuruTarih)</a></span></p>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="panel-footer text-center"style="background-color:white">
+                <button type="button"   style="background-color:brown" class="btn btn-primary">>@web.Resources.lang.TumDuyurular</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading"style="background-color:lightcoral ;color:white ">@web.Resources.lang.Etkinlikler</div>
+            <div class="panel-body"style="background-color:lightgoldenrodyellow">
+                
+                @foreach (var item in Model.referans)
+                {
+                    <div class="blog-list-post clearfix">
+                        <div class="blog-list-thumb">
+                            @if (item.ReferansFoto == null)
+                            {
+                                <a><img class="img-responsive" src="~/resim/slider1.jpg" alt="@item.ReferansBaslik" /></a>
+                            }
+                            else
+                            {
+                                <a><img class="img-responsive" src="data:image/png;base64,@System.Convert.ToBase64String(item.ReferansFoto)" alt="@item.ReferansBaslik"></a>
+                            }
+                        </div>
+                        <div class="blog-list-details">
+
+                            <h5 class="blog-list-title">@item.ReferansIcerik</h5>
+                            <p class="blog-list-meta small-text"><span><a>@String.Format("{0:dd/MM/yyyy}", item.ReferansTarih)</a></span></p>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="panel-footer text-center"style="background-color:white">
+                <button type="button" style="background-color:brown" class="btn btn-primary">@web.Resources.lang.Etkinlikler</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default" >
+            <div class="panel-heading" style="background-color:lightcoral ; color:white">@web.Resources.lang.Blog</div>
+            <div class="panel-body"style="background-color:lightgoldenrodyellow">
+               
+                @foreach (var item in Model.blog)
+                {
+                    <div class="blog-list-post clearfix">
+                        <div class="blog-list-thumb">
+                            @if (item.BlogFoto == null)
+                            {
+                                <a><img class="img-responsive" src="~/resim/slider1.jpg" alt="@item.BlogBaslik" /></a>
+                            }
+                            else
+                            {
+                                <a><img class="img-responsive" src="data:image/png;base64,@System.Convert.ToBase64String(item.BlogFoto)" alt="@item.BlogBaslik"></a>
+                            }
+                        </div>
+                        <div class="blog-list-details">
+                            <h5 class="blog-list-title"><a href="/Home/Blog">@item.BlogBaslik</a></h5>
+                            <p class="blog-list-meta small-text"><span><a>@String.Format("{0:dd/MM/yyyy}", item.BlogTarih)</a></span></p>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="panel-footer text-center" style="background-color:white">
+                <button type="button" style="background-color:brown"class="btn btn-primary">@web.Resources.lang.Blog</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $("#slider.item:first").addClass("item active");
+</script>

@@ -1,0 +1,40 @@
+﻿
+
+@{
+    ViewBag.Title = "Modules";
+}
+@model  List<web.Models.Data.Modul>
+<div class="row">
+    <div class="panel panel-default" >
+        <div class="panel-heading" style="background-color:coral; margin-top:30px">
+            <h4 style="font-family: 'Segoe Print';color:white;margin-left:600px">@web.Resources.lang.Moduller</h4style="font-family:>
+        </div>
+        <div class="panel-body" style=" background-color:white">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-body" style="background-color: white" >
+                            <div class="col-md-12">
+                                @if (item.ModulFoto == null)
+                                {
+                                    <img class="img-responsive" src="~/resim/fitness.jpg" alt="@item.ModulBaslik" />
+                                }
+                                else
+                                {
+                                    <img class="img-responsive" src="data:image/png;base64,@System.Convert.ToBase64String(item.ModulFoto)" alt="@item.ModulBaslik" />
+                                }
+                            </div>
+                            <div class="col-md-12">
+                                <h4>@item.ModulBaslik</h4>
+                                <p>@item.ModulIcerik</p>
+                                <a href="/Home/ModuleDetails?ModulID=@item.ID" class="btn btn-primary" style="background-color:maroon">@web.Resources.lang.Detaylar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
